@@ -1,0 +1,82 @@
+﻿server:
+  port: 8080
+  mode: release
+
+database:
+  dsn: "root:password@tcp(mysql:3306)/langops?parseTime=true&charset=utf8mb4"
+  max_idle_conns: 10
+  max_open_conns: 100
+
+redis:
+  addr: "redis:6379"
+  password: ""
+  db: 0
+
+kafka:
+  brokers:
+    - "kafka:9092"
+  topic_prefix: "langops"
+
+elasticsearch:
+  addrs:
+    - "http://elasticsearch:9200"
+  index_prefix: "langops"
+
+security:
+  jwt_secret: "change-me-in-production"
+  jwt_expire_hours: 24
+  rbac_enabled: true
+  audit_chain_enabled: true
+  content_guard_enabled: true
+  data_mask_enabled: true
+
+observability:
+  tracing:
+    enabled: true
+    exporter: "jaeger"
+    endpoint: "http://jaeger:14268/api/traces"
+  metrics:
+    enabled: true
+    port: 9090
+  cost:
+    enabled: true
+    alert_threshold_pct: 80
+
+eval:
+  default_model: "gpt-4o"
+  dimensions:
+    - name: accuracy
+      weight: 0.20
+      threshold: 0.8
+    - name: relevance
+      weight: 0.15
+      threshold: 0.75
+    - name: factuality
+      weight: 0.20
+      threshold: 0.85
+    - name: compliance
+      weight: 0.15
+      threshold: 0.9
+    - name: fluency
+      weight: 0.10
+      threshold: 0.7
+    - name: harmfulness
+      weight: 0.20
+      threshold: 0.95
+
+degradation:
+  enabled: true
+  check_interval_seconds: 300
+  alert_channels:
+    - email
+    - wechat
+
+release:
+  environments:
+    - development
+    - staging
+    - preproduction
+    - production
+  approval_required: true
+  canary_default_pct: 20
+  auto_rollback_enabled: true
