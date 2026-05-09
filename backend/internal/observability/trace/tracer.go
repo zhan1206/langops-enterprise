@@ -13,32 +13,32 @@ const (
 )
 
 type Span struct {
-	TraceID   string            json:"trace_id"
-	SpanID    string            json:"span_id"
-	ParentID  string            json:"parent_id,omitempty"
-	Name      string            json:"name"
-	Kind      SpanKind          json:"kind"
-	StartTime time.Time         json:"start_time"
-	EndTime   time.Time         json:"end_time"
-	Duration  int64             json:"duration_ms"
-	Attrs     map[string]string json:"attributes"
-	Status    string            json:"status"
-	Events    []SpanEvent       json:"events,omitempty"
+	TraceID   string            `json:"trace_id"`
+	SpanID    string            `json:"span_id"`
+	ParentID  string            `json:"parent_id,omitempty"`
+	Name      string            `json:"name"`
+	Kind      SpanKind          `json:"kind"`
+	StartTime time.Time         `json:"start_time"`
+	EndTime   time.Time         `json:"end_time"`
+	Duration  int64             `json:"duration_ms"`
+	Attrs     map[string]string `json:"attributes"`
+	Status    string            `json:"status"`
+	Events    []SpanEvent       `json:"events,omitempty"`
 }
 
 type SpanEvent struct {
-	Name      string            json:"name"
-	Timestamp time.Time         json:"timestamp"
-	Attrs     map[string]string json:"attributes,omitempty"
+	Name      string            `json:"name"`
+	Timestamp time.Time         `json:"timestamp"`
+	Attrs     map[string]string `json:"attributes,omitempty"`
 }
 
 type TraceResult struct {
-	TraceID    string    json:"trace_id"
-	RootSpan   *Span     json:"root_span"
-	Spans      []Span    json:"spans"
-	Duration   int64     json:"total_duration_ms"
-	TokenCount int       json:"token_count"
-	Status     string    json:"status"
+	TraceID    string    `json:"trace_id"`
+	RootSpan   *Span     `json:"root_span"`
+	Spans      []Span    `json:"spans"`
+	Duration   int64     `json:"total_duration_ms"`
+	TokenCount int       `json:"token_count"`
+	Status     string    `json:"status"`
 }
 
 type Tracer struct {

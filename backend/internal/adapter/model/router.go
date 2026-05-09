@@ -15,14 +15,14 @@ const (
 
 // ModelConfig defines a model's configuration
 type ModelConfig struct {
-	ID         string   json:"id"
-	Provider   Provider json:"provider"
-	ModelName  string   json:"model_name"
-	Endpoint   string   json:"endpoint"
-	APIKey     string   json:"api_key,omitempty"
-	MaxTokens  int      json:"max_tokens"
-	CostInput  float64  json:"cost_per_1k_input"
-	CostOutput float64  json:"cost_per_1k_output"
+	ID         string   `json:"id"`
+	Provider   Provider `json:"provider"`
+	ModelName  string   `json:"model_name"`
+	Endpoint   string   `json:"endpoint"`
+	APIKey     string   `json:"api_key,omitempty"`
+	MaxTokens  int      `json:"max_tokens"`
+	CostInput  float64  `json:"cost_per_1k_input"`
+	CostOutput float64  `json:"cost_per_1k_output"`
 }
 
 // Router routes requests to the appropriate model

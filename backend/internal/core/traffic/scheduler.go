@@ -19,16 +19,16 @@ const (
 
 // TrafficRule defines how traffic is distributed
 type TrafficRule struct {
-	ID          string            json:"id"
-	Name        string            json:"name"
-	Type        RuleType          json:"type"
-	ResourceID  string            json:"resource_id"
-	Conditions  map[string]string json:"conditions"
-	TargetID    string            json:"target_version_id"
-	Weight      int               json:"weight"
-	Priority    int               json:"priority"
-	Enabled     bool              json:"enabled"
-	CreatedAt   time.Time         json:"created_at"
+	ID          string            `json:"id"`
+	Name        string            `json:"name"`
+	Type        RuleType          `json:"type"`
+	ResourceID  string            `json:"resource_id"`
+	Conditions  map[string]string `json:"conditions"`
+	TargetID    string            `json:"target_version_id"`
+	Weight      int               `json:"weight"`
+	Priority    int               `json:"priority"`
+	Enabled     bool              `json:"enabled"`
+	CreatedAt   time.Time         `json:"created_at"`
 }
 
 // Scheduler manages traffic distribution

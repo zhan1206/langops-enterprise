@@ -35,27 +35,27 @@ import (
 )
 
 type Config struct {
-	Server   ServerConfig   yaml:"server"
-	Database DatabaseConfig yaml:"database"
-	Redis    RedisConfig    yaml:"redis"
-	Security SecurityConfig yaml:"security"
+	Server   ServerConfig   `yaml:"server"`
+	Database DatabaseConfig `yaml:"database"`
+	Redis    RedisConfig    `yaml:"redis"`
+	Security SecurityConfig `yaml:"security"`
 }
 
 type ServerConfig struct {
-	Port string yaml:"port"
-	Mode string yaml:"mode"
+	Port string `yaml:"port"`
+	Mode string `yaml:"mode"`
 }
 
 type DatabaseConfig struct {
-	DSN string yaml:"dsn"
+	DSN string `yaml:"dsn"`
 }
 
 type RedisConfig struct {
-	Addr string yaml:"addr"
+	Addr string `yaml:"addr"`
 }
 
 type SecurityConfig struct {
-	JWTSecret string yaml:"jwt_secret"
+	JWTSecret string `yaml:"jwt_secret"`
 }
 
 func main() {

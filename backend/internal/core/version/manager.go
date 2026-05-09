@@ -21,18 +21,18 @@ const (
 
 // Version represents a versioned snapshot of a resource
 type Version struct {
-	ID          string       json:"id"
-	ResourceID  string       json:"resource_id"
-	ResourceType ResourceType json:"resource_type"
-	VersionNum  int          json:"version_num"
-	Content     string       json:"content"
-	Checksum    string       json:"checksum"
-	Branch      string       json:"branch"
-	ParentID    string       json:"parent_id,omitempty"
-	Author      string       json:"author"
-	Message     string       json:"message"
-	Tags        []string     json:"tags,omitempty"
-	CreatedAt   time.Time    json:"created_at"
+	ID          string       `json:"id"`
+	ResourceID  string       `json:"resource_id"`
+	ResourceType ResourceType `json:"resource_type"`
+	VersionNum  int          `json:"version_num"`
+	Content     string       `json:"content"`
+	Checksum    string       `json:"checksum"`
+	Branch      string       `json:"branch"`
+	ParentID    string       `json:"parent_id,omitempty"`
+	Author      string       `json:"author"`
+	Message     string       `json:"message"`
+	Tags        []string     `json:"tags,omitempty"`
+	CreatedAt   time.Time    `json:"created_at"`
 }
 
 // Manager handles version management for LLM application resources
@@ -44,10 +44,10 @@ type Manager struct {
 
 // Branch represents a version branch
 type Branch struct {
-	Name      string    json:"name"
-	BaseVer   int       json:"base_version"
-	HeadVer   int       json:"head_version"
-	CreatedAt time.Time json:"created_at"
+	Name      string    `json:"name"`
+	BaseVer   int       `json:"base_version"`
+	HeadVer   int       `json:"head_version"`
+	CreatedAt time.Time `json:"created_at"`
 }
 
 // NewManager creates a new version manager
@@ -73,8 +73,8 @@ func (m *Manager) Create(c *gin.Context) {
 		ResourceID  string       json:"resource_id" binding:"required"
 		ResourceType ResourceType json:"resource_type" binding:"required"
 		Content     string       json:"content" binding:"required"
-		Message     string       json:"message"
-		Branch      string       json:"branch"
+		Message     string       `json:"message"`
+		Branch      string       `json:"branch"`
 	}
 	if err := c.ShouldBindJSON(&req); err != nil {
 		c.JSON(400, gin.H{"error": err.Error()})

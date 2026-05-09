@@ -17,27 +17,27 @@ const (
 
 // DegradationAlert represents a detected degradation event
 type DegradationAlert struct {
-	ID          string     json:"id"
-	ResourceID  string     json:"resource_id"
-	Metric      string     json:"metric"
-	PreviousVal float64    json:"previous_value"
-	CurrentVal  float64    json:"current_value"
-	DropPct     float64    json:"drop_percentage"
-	Level       AlertLevel json:"level"
-	RootCause   string     json:"root_cause,omitempty"
-	Status      string     json:"status"
-	DetectedAt  time.Time  json:"detected_at"
+	ID          string     `json:"id"`
+	ResourceID  string     `json:"resource_id"`
+	Metric      string     `json:"metric"`
+	PreviousVal float64    `json:"previous_value"`
+	CurrentVal  float64    `json:"current_value"`
+	DropPct     float64    `json:"drop_percentage"`
+	Level       AlertLevel `json:"level"`
+	RootCause   string     `json:"root_cause,omitempty"`
+	Status      string     `json:"status"`
+	DetectedAt  time.Time  `json:"detected_at"`
 }
 
 // DetectionRule defines a degradation detection rule
 type DetectionRule struct {
-	ID         string  json:"id"
-	Name       string  json:"name"
-	Metric     string  json:"metric"
-	Threshold  float64 json:"threshold"
-	WindowSize int     json:"window_size_minutes"
-	Cooldown   int     json:"cooldown_minutes"
-	Enabled    bool    json:"enabled"
+	ID         string  `json:"id"`
+	Name       string  `json:"name"`
+	Metric     string  `json:"metric"`
+	Threshold  float64 `json:"threshold"`
+	WindowSize int     `json:"window_size_minutes"`
+	Cooldown   int     `json:"cooldown_minutes"`
+	Enabled    bool    `json:"enabled"`
 }
 
 // Detector monitors and detects effect degradation

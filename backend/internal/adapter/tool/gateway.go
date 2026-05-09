@@ -12,12 +12,12 @@ const (
 
 // ToolConfig defines a tool's configuration
 type ToolConfig struct {
-	ID          string   json:"id"
-	Name        string   json:"name"
-	Type        ToolType json:"type"
-	Endpoint    string   json:"endpoint"
-	Description string   json:"description"
-	Enabled     bool     json:"enabled"
+	ID          string   `json:"id"`
+	Name        string   `json:"name"`
+	Type        ToolType `json:"type"`
+	Endpoint    string   `json:"endpoint"`
+	Description string   `json:"description"`
+	Enabled     bool     `json:"enabled"`
 }
 
 // Gateway provides unified tool access

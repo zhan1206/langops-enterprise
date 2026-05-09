@@ -20,27 +20,27 @@ const (
 
 // Analysis represents a root cause analysis result
 type Analysis struct {
-	ID           string             json:"id"
-	ResourceID   string             json:"resource_id"
-	TriggerEvent string             json:"trigger_event"
-	Category     RootCauseCategory  json:"category"
-	Confidence   float64            json:"confidence"
-	Description  string             json:"description"
-	Evidence     []string           json:"evidence"
-	Suggestions  []Suggestion       json:"suggestions"
-	TraceIDs     []string           json:"trace_ids"
-	AnalyzedAt   time.Time          json:"analyzed_at"
+	ID           string             `json:"id"`
+	ResourceID   string             `json:"resource_id"`
+	TriggerEvent string             `json:"trigger_event"`
+	Category     RootCauseCategory  `json:"category"`
+	Confidence   float64            `json:"confidence"`
+	Description  string             `json:"description"`
+	Evidence     []string           `json:"evidence"`
+	Suggestions  []Suggestion       `json:"suggestions"`
+	TraceIDs     []string           `json:"trace_ids"`
+	AnalyzedAt   time.Time          `json:"analyzed_at"`
 }
 
 // Suggestion represents an optimization suggestion
 type Suggestion struct {
-	ID          string            json:"id"
-	Type        string            json:"type"
-	Priority    int               json:"priority"
-	Description string            json:"description"
-	Action      string            json:"action"
-	Params      map[string]string json:"params,omitempty"
-	AutoApply   bool              json:"auto_apply"
+	ID          string            `json:"id"`
+	Type        string            `json:"type"`
+	Priority    int               `json:"priority"`
+	Description string            `json:"description"`
+	Action      string            `json:"action"`
+	Params      map[string]string `json:"params,omitempty"`
+	AutoApply   bool              `json:"auto_apply"`
 }
 
 // Analyzer performs root cause analysis
@@ -59,7 +59,7 @@ func (a *Analyzer) Analyze(c *gin.Context) {
 	var req struct {
 		ResourceID  string json:"resource_id" binding:"required"
 		TriggerEvent string json:"trigger_event" binding:"required"
-		TraceIDs    []string json:"trace_ids"
+		TraceIDs    []string `json:"trace_ids"`
 	}
 	if err := c.ShouldBindJSON(&req); err != nil {
 		c.JSON(400, gin.H{"error": err.Error()})

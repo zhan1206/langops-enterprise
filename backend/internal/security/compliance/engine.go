@@ -11,28 +11,28 @@ const (
 )
 
 type ComplianceRule struct {
-	ID          string   json:"id"
-	Standard    Standard json:"standard"
-	Name        string   json:"name"
-	Description string   json:"description"
-	Severity    string   json:"severity"
-	Enabled     bool     json:"enabled"
+	ID          string   `json:"id"`
+	Standard    Standard `json:"standard"`
+	Name        string   `json:"name"`
+	Description string   `json:"description"`
+	Severity    string   `json:"severity"`
+	Enabled     bool     `json:"enabled"`
 }
 
 type ComplianceResult struct {
-	RuleID   string  json:"rule_id"
-	Passed   bool    json:"passed"
-	Score    float64 json:"score"
-	Details  string  json:"details"
+	RuleID   string  `json:"rule_id"`
+	Passed   bool    `json:"passed"`
+	Score    float64 `json:"score"`
+	Details  string  `json:"details"`
 }
 
 type ComplianceReport struct {
-	ID        string             json:"id"
-	Standard  Standard           json:"standard"
-	Results   []ComplianceResult json:"results"
-	TotalScore float64           json:"total_score"
-	PassRate  float64            json:"pass_rate"
-	CreatedAt string             json:"created_at"
+	ID        string             `json:"id"`
+	Standard  Standard           `json:"standard"`
+	Results   []ComplianceResult `json:"results"`
+	TotalScore float64           `json:"total_score"`
+	PassRate  float64            `json:"pass_rate"`
+	CreatedAt string             `json:"created_at"`
 }
 
 type Engine struct {

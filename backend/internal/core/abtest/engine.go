@@ -18,34 +18,34 @@ const (
 
 // Variant represents a test variant
 type Variant struct {
-	ID          string  json:"id"
-	Name        string  json:"name"
-	VersionID   string  json:"version_id"
-	TrafficPct  float64 json:"traffic_percentage"
-	Description string  json:"description"
+	ID          string  `json:"id"`
+	Name        string  `json:"name"`
+	VersionID   string  `json:"version_id"`
+	TrafficPct  float64 `json:"traffic_percentage"`
+	Description string  `json:"description"`
 }
 
 // ABTest represents an A/B test experiment
 type ABTest struct {
-	ID          string       json:"id"
-	Name        string       json:"name"
-	ResourceID  string       json:"resource_id"
-	Variants    []Variant    json:"variants"
-	Status      ABTestStatus json:"status"
-	Duration    int          json:"duration_hours"
-	WinnerID    string       json:"winner_id,omitempty"
-	StartedAt   *time.Time   json:"started_at,omitempty"
-	CompletedAt *time.Time   json:"completed_at,omitempty"
-	CreatedAt   time.Time    json:"created_at"
+	ID          string       `json:"id"`
+	Name        string       `json:"name"`
+	ResourceID  string       `json:"resource_id"`
+	Variants    []Variant    `json:"variants"`
+	Status      ABTestStatus `json:"status"`
+	Duration    int          `json:"duration_hours"`
+	WinnerID    string       `json:"winner_id,omitempty"`
+	StartedAt   *time.Time   `json:"started_at,omitempty"`
+	CompletedAt *time.Time   `json:"completed_at,omitempty"`
+	CreatedAt   time.Time    `json:"created_at"`
 }
 
 // ABTestResult represents the result of an A/B test
 type ABTestResult struct {
-	TestID      string             json:"test_id"
-	VariantID   string             json:"variant_id"
-	Metrics     map[string]float64 json:"metrics"
-	SampleSize  int64              json:"sample_size"
-	IsWinner    bool               json:"is_winner"
+	TestID      string             `json:"test_id"`
+	VariantID   string             `json:"variant_id"`
+	Metrics     map[string]float64 `json:"metrics"`
+	SampleSize  int64              `json:"sample_size"`
+	IsWinner    bool               `json:"is_winner"`
 }
 
 // Engine manages A/B testing

@@ -8,51 +8,51 @@ import (
 
 // TestCase represents a test case for regression testing
 type TestCase struct {
-	ID          string            json:"id"
-	Name        string            json:"name"
-	Category    string            json:"category"
-	Input       string            json:"input"
-	Expected    string            json:"expected"
-	Variables   map[string]string json:"variables,omitempty"
-	Tags        []string          json:"tags,omitempty"
-	Priority    int               json:"priority"
-	Enabled     bool              json:"enabled"
+	ID          string            `json:"id"`
+	Name        string            `json:"name"`
+	Category    string            `json:"category"`
+	Input       string            `json:"input"`
+	Expected    string            `json:"expected"`
+	Variables   map[string]string `json:"variables,omitempty"`
+	Tags        []string          `json:"tags,omitempty"`
+	Priority    int               `json:"priority"`
+	Enabled     bool              `json:"enabled"`
 }
 
 // TestSuite represents a collection of test cases
 type TestSuite struct {
-	ID          string     json:"id"
-	Name        string     json:"name"
-	Description string     json:"description"
-	Cases       []TestCase json:"cases"
-	CreatedAt   time.Time  json:"created_at"
-	UpdatedAt   time.Time  json:"updated_at"
+	ID          string     `json:"id"`
+	Name        string     `json:"name"`
+	Description string     `json:"description"`
+	Cases       []TestCase `json:"cases"`
+	CreatedAt   time.Time  `json:"created_at"`
+	UpdatedAt   time.Time  `json:"updated_at"`
 }
 
 // TestResult represents the result of a test case execution
 type TestResult struct {
-	CaseID     string    json:"case_id"
-	Passed     bool      json:"passed"
-	Actual     string    json:"actual"
-	Score      float64   json:"score"
-	Duration   int64     json:"duration_ms"
-	Error      string    json:"error,omitempty"
-	ExecutedAt time.Time json:"executed_at"
+	CaseID     string    `json:"case_id"`
+	Passed     bool      `json:"passed"`
+	Actual     string    `json:"actual"`
+	Score      float64   `json:"score"`
+	Duration   int64     `json:"duration_ms"`
+	Error      string    `json:"error,omitempty"`
+	ExecutedAt time.Time `json:"executed_at"`
 }
 
 // SuiteRun represents a complete regression test run
 type SuiteRun struct {
-	ID          string       json:"id"
-	SuiteID     string       json:"suite_id"
-	VersionID   string       json:"version_id"
-	Status      string       json:"status"
-	Results     []TestResult json:"results"
-	TotalCases  int          json:"total_cases"
-	PassedCases int          json:"passed_cases"
-	FailedCases int          json:"failed_cases"
-	PassRate    float64      json:"pass_rate"
-	StartedAt   time.Time    json:"started_at"
-	CompletedAt time.Time    json:"completed_at,omitempty"
+	ID          string       `json:"id"`
+	SuiteID     string       `json:"suite_id"`
+	VersionID   string       `json:"version_id"`
+	Status      string       `json:"status"`
+	Results     []TestResult `json:"results"`
+	TotalCases  int          `json:"total_cases"`
+	PassedCases int          `json:"passed_cases"`
+	FailedCases int          `json:"failed_cases"`
+	PassRate    float64      `json:"pass_rate"`
+	StartedAt   time.Time    `json:"started_at"`
+	CompletedAt time.Time    `json:"completed_at,omitempty"`
 }
 
 // Suite manages regression test suites

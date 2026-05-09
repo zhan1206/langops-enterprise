@@ -10,23 +10,23 @@ const (
 )
 
 type GuardRule struct {
-	ID          string     json:"id"
-	Name        string     json:"name"
-	Category    string     json:"category"
-	Pattern     string     json:"pattern"
-	Level       GuardLevel json:"level"
-	Description string     json:"description"
-	Enabled     bool       json:"enabled"
+	ID          string     `json:"id"`
+	Name        string     `json:"name"`
+	Category    string     `json:"category"`
+	Pattern     string     `json:"pattern"`
+	Level       GuardLevel `json:"level"`
+	Description string     `json:"description"`
+	Enabled     bool       `json:"enabled"`
 }
 
 type GuardResult struct {
-	RuleID    string     json:"rule_id"
-	RuleName  string     json:"rule_name"
-	Category  string     json:"category"
-	Level     GuardLevel json:"level"
-	Matched   bool       json:"matched"
-	Original  string     json:"original,omitempty"
-	Sanitized string     json:"sanitized,omitempty"
+	RuleID    string     `json:"rule_id"`
+	RuleName  string     `json:"rule_name"`
+	Category  string     `json:"category"`
+	Level     GuardLevel `json:"level"`
+	Matched   bool       `json:"matched"`
+	Original  string     `json:"original,omitempty"`
+	Sanitized string     `json:"sanitized,omitempty"`
 }
 
 type Guard struct {

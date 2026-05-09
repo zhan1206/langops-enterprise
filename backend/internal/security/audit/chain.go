@@ -18,15 +18,15 @@ const (
 )
 
 type AuditEntry struct {
-	ID        string    +""+json:"id"+""+
-	EventType EventType +""+json:"event_type"+""+
-	Resource  string    +""+json:"resource"+""+
-	Action    string    +""+json:"action"+""+
-	Actor     string    +""+json:"actor"+""+
-	Details   string    +""+json:"details"+""+
-	PrevHash  string    +""+json:"prev_hash"+""+
-	Hash      string    +""+json:"hash"+""+
-	Timestamp time.Time +""+json:"timestamp"+""+
+	ID        string    `json:"id"`
+	EventType EventType `json:"event_type"`
+	Resource  string    `json:"resource"`
+	Action    string    `json:"action"`
+	Actor     string    `json:"actor"`
+	Details   string    `json:"details"`
+	PrevHash  string    `json:"prev_hash"`
+	Hash      string    `json:"hash"`
+	Timestamp time.Time `json:"timestamp"`
 }
 
 type Chain struct {

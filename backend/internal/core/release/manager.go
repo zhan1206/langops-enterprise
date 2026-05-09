@@ -31,18 +31,18 @@ const (
 
 // Release represents a version release
 type Release struct {
-	ID           string        json:"id"
-	VersionID    string        json:"version_id"
-	ResourceID   string        json:"resource_id"
-	FromEnv      Environment   json:"from_env"
-	ToEnv        Environment   json:"to_env"
-	Status       ReleaseStatus json:"status"
-	CanaryPct    int           json:"canary_percentage"
-	ApprovedBy   string        json:"approved_by,omitempty"
-	ApprovedAt   *time.Time    json:"approved_at,omitempty"
-	RollbackOn   string        json:"rollback_conditions"
-	CreatedAt    time.Time     json:"created_at"
-	CompletedAt  *time.Time    json:"completed_at,omitempty"
+	ID           string        `json:"id"`
+	VersionID    string        `json:"version_id"`
+	ResourceID   string        `json:"resource_id"`
+	FromEnv      Environment   `json:"from_env"`
+	ToEnv        Environment   `json:"to_env"`
+	Status       ReleaseStatus `json:"status"`
+	CanaryPct    int           `json:"canary_percentage"`
+	ApprovedBy   string        `json:"approved_by,omitempty"`
+	ApprovedAt   *time.Time    `json:"approved_at,omitempty"`
+	RollbackOn   string        `json:"rollback_conditions"`
+	CreatedAt    time.Time     `json:"created_at"`
+	CompletedAt  *time.Time    `json:"completed_at,omitempty"`
 }
 
 // Manager handles release lifecycle

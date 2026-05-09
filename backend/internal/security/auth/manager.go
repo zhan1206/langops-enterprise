@@ -9,10 +9,10 @@ import (
 )
 
 type Claims struct {
-	UserID   string   +""+json:"user_id"+""+
-	Username string   +""+json:"username"+""+
-	Role     string   +""+json:"role"+""+
-	Teams    []string +""+json:"teams"+""+
+	UserID   string   `json:"user_id"`
+	Username string   `json:"username"`
+	Role     string   `json:"role"`
+	Teams    []string `json:"teams"`
 }
 
 type Manager struct {

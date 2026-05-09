@@ -18,28 +18,28 @@ const (
 
 // Review represents a code/config review
 type Review struct {
-	ID          string       json:"id"
-	ResourceID  string       json:"resource_id"
-	VersionID   string       json:"version_id"
-	Title       string       json:"title"
-	Description string       json:"description"
-	Author      string       json:"author"
-	Reviewers   []string     json:"reviewers"
-	Status      ReviewStatus json:"status"
-	Comments    []Comment    json:"comments"
-	CreatedAt   time.Time    json:"created_at"
-	UpdatedAt   time.Time    json:"updated_at"
+	ID          string       `json:"id"`
+	ResourceID  string       `json:"resource_id"`
+	VersionID   string       `json:"version_id"`
+	Title       string       `json:"title"`
+	Description string       `json:"description"`
+	Author      string       `json:"author"`
+	Reviewers   []string     `json:"reviewers"`
+	Status      ReviewStatus `json:"status"`
+	Comments    []Comment    `json:"comments"`
+	CreatedAt   time.Time    `json:"created_at"`
+	UpdatedAt   time.Time    `json:"updated_at"`
 }
 
 // Comment represents a review comment
 type Comment struct {
-	ID        string    json:"id"
-	ReviewID  string    json:"review_id"
-	Author    string    json:"author"
-	Content   string    json:"content"
-	Line      int       json:"line,omitempty"
-	Resolved  bool      json:"resolved"
-	CreatedAt time.Time json:"created_at"
+	ID        string    `json:"id"`
+	ReviewID  string    `json:"review_id"`
+	Author    string    `json:"author"`
+	Content   string    `json:"content"`
+	Line      int       `json:"line,omitempty"`
+	Resolved  bool      `json:"resolved"`
+	CreatedAt time.Time `json:"created_at"`
 }
 
 // Center manages collaboration and reviews

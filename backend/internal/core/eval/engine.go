@@ -25,37 +25,37 @@ const (
 
 // EvalResult represents a single evaluation result
 type EvalResult struct {
-	Dimension Dimension  json:"dimension"
-	Score     float64    json:"score"
-	Weight    float64    json:"weight"
-	Details   string     json:"details,omitempty"
-	Passed    bool       json:"passed"
+	Dimension Dimension  `json:"dimension"`
+	Score     float64    `json:"score"`
+	Weight    float64    `json:"weight"`
+	Details   string     `json:"details,omitempty"`
+	Passed    bool       `json:"passed"`
 }
 
 // EvalReport represents a complete evaluation report
 type EvalReport struct {
-	ID          string       json:"id"
-	ResourceID  string       json:"resource_id"
-	Version     int          json:"version"
-	Results     []EvalResult json:"results"
-	TotalScore  float64      json:"total_score"
-	PassRate    float64      json:"pass_rate"
-	EvalModel   string       json:"eval_model"
-	CompletedAt time.Time    json:"completed_at"
+	ID          string       `json:"id"`
+	ResourceID  string       `json:"resource_id"`
+	Version     int          `json:"version"`
+	Results     []EvalResult `json:"results"`
+	TotalScore  float64      `json:"total_score"`
+	PassRate    float64      `json:"pass_rate"`
+	EvalModel   string       `json:"eval_model"`
+	CompletedAt time.Time    `json:"completed_at"`
 }
 
 // EvalConfig defines evaluation configuration
 type EvalConfig struct {
-	Dimensions []DimensionConfig json:"dimensions"
-	EvalModel  string            json:"eval_model"
-	Threshold  float64           json:"threshold"
+	Dimensions []DimensionConfig `json:"dimensions"`
+	EvalModel  string            `json:"eval_model"`
+	Threshold  float64           `json:"threshold"`
 }
 
 // DimensionConfig defines a dimension's evaluation config
 type DimensionConfig struct {
-	Dimension Dimension json:"dimension"
-	Weight    float64   json:"weight"
-	Threshold float64   json:"threshold"
+	Dimension Dimension `json:"dimension"`
+	Weight    float64   `json:"weight"`
+	Threshold float64   `json:"threshold"`
 }
 
 // Engine is the multi-dimensional evaluation engine

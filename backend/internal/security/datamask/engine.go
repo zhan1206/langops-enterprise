@@ -6,20 +6,20 @@ import (
 )
 
 type MaskRule struct {
-	ID       string json:"id"
-	Name     string json:"name"
-	Category string json:"category"
-	Pattern  string json:"pattern"
-	MaskChar string json:"mask_char"
-	KeepLen  int    json:"keep_visible_length"
-	Enabled  bool   json:"enabled"
+	ID       string `json:"id"`
+	Name     string `json:"name"`
+	Category string `json:"category"`
+	Pattern  string `json:"pattern"`
+	MaskChar string `json:"mask_char"`
+	KeepLen  int    `json:"keep_visible_length"`
+	Enabled  bool   `json:"enabled"`
 }
 
 type MaskResult struct {
-	RuleID   string json:"rule_id"
-	Original string json:"original"
-	Masked   string json:"masked"
-	Matched  bool   json:"matched"
+	RuleID   string `json:"rule_id"`
+	Original string `json:"original"`
+	Masked   string `json:"masked"`
+	Matched  bool   `json:"matched"`
 }
 
 type Engine struct {
@@ -74,10 +74,10 @@ func maskValue(value, maskChar string, keepLen int) string {
 
 func defaultMaskRules() []MaskRule {
 	return []MaskRule{
-		{ID: "mr-1", Name: "ID Card", Category: "pii", Pattern: \d{17}[\dXx], MaskChar: "*", KeepLen: 4, Enabled: true},
-		{ID: "mr-2", Name: "Phone", Category: "pii", Pattern: 1[3-9]\d{9}, MaskChar: "*", KeepLen: 3, Enabled: true},
-		{ID: "mr-3", Name: "Bank Card", Category: "financial", Pattern: \d{16,19}, MaskChar: "*", KeepLen: 4, Enabled: true},
-		{ID: "mr-4", Name: "Email", Category: "pii", Pattern: [a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}, MaskChar: "*", KeepLen: 3, Enabled: true},
-		{ID: "mr-5", Name: "API Key", Category: "secret", Pattern: (?:sk|pk)-[a-zA-Z0-9]{20,}, MaskChar: "*", KeepLen: 3, Enabled: true},
+		{ID: "mr-1", Name: "ID Card", Category: "pii", Pattern: `\d{17}[\dXx]`, MaskChar: "*", KeepLen: 4, Enabled: true},
+		{ID: "mr-2", Name: "Phone", Category: "pii", Pattern: `1[3-9]\d{9}`, MaskChar: "*", KeepLen: 3, Enabled: true},
+		{ID: "mr-3", Name: "Bank Card", Category: "financial", Pattern: `\d{16,19}`, MaskChar: "*", KeepLen: 4, Enabled: true},
+		{ID: "mr-4", Name: "Email", Category: "pii", Pattern: `[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}`, MaskChar: "*", KeepLen: 3, Enabled: true},
+		{ID: "mr-5", Name: "API Key", Category: "secret", Pattern: `(?:sk|pk)-[a-zA-Z0-9]{20,}`, MaskChar: "*", KeepLen: 3, Enabled: true},
 	}
 }
